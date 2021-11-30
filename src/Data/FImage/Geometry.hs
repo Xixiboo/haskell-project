@@ -20,8 +20,7 @@ distO :: Point.Point -> Float
 distO Point.Point {Point.x = x, Point.y = y} = sqrt $ x**2 + y**2
 
 -- | Convert a polar point to a cartesian point.
-fromPolar :: PolarPoint.PolarPoint -> Point.Point
-fromPolar PolarPoint.PolarPoint {PolarPoint.rho = rho, PolarPoint.theta = theta}
+-- fromPolar :: PolarPoint.PolarPoint -> Point.Point
 
 
 -- | Convert a cartesian point to a polar point.
