@@ -1,0 +1,83 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           haskell-project
+version:        0.1.0.0
+synopsis:       Functional images
+category:       Development
+homepage:       https://github.com/Xixiboo/haskell-project#readme
+bug-reports:    https://github.com/Xixiboo/haskell-project/issues
+author:         Jeremy Thiebaud - Cécile Yen
+copyright:      2021 Jeremy Thiebaud - Cécile Yen 
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Xixiboo/haskell-project
+
+library
+  exposed-modules:
+      Data.FImage.Algebra
+      Data.FImage.BMP
+      Data.FImage.Geometry
+      Data.FImage.Geometry.Point
+      Data.FImage.Geometry.PolarPoint
+      Data.FImage.Geometry.Vector
+      Data.FImage.Image
+      Data.FImage.Image.Simple
+      Data.FImage.Image.Gallery
+      Data.FImage.Interval
+      Data.FImage.Transformation
+      Data.FImage.Render
+      Data.FImage.View
+      Data.FImage.Window
+  other-modules:
+      Paths_haskell_project
+  hs-source-dirs:
+      src/
+  ghc-options: -Wall -fwarn-tabs -fwarn-incomplete-uni-patterns -fwarn-incomplete-record-updates -fwarn-identities
+  build-depends:
+      base >=4.7 && <5
+    , bmp >=1.2
+    , bytestring >=0.10
+    , containers >=0.5
+  default-language: Haskell2010
+
+executable haskell-project-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_project
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -fwarn-tabs -fwarn-incomplete-uni-patterns -fwarn-incomplete-record-updates -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bmp >=1.2
+    , bytestring >=0.10
+    , containers >=0.5
+    , haskell-project
+  default-language: Haskell2010
+
+test-suite haskell-project-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_haskell_project
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -fwarn-tabs -fwarn-incomplete-uni-patterns -fwarn-incomplete-record-updates -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bmp >=1.2
+    , bytestring >=0.10
+    , containers >=0.5
+    , haskell-project
+  default-language: Haskell2010
