@@ -19,6 +19,7 @@ import qualified Data.FImage.Image as Image
 [True,True,True,True,True,True,True,True,True]
 -}
 universe :: Image.Image
+universe p = True
 
 {- | The all-False boolean image.
 
@@ -27,6 +28,7 @@ universe :: Image.Image
 [False,False,False,False,False,False,False,False,False]
 -}
 empty :: Image.Image
+empty p = False
 
 {- | Complement a boolean image.
 
@@ -40,6 +42,7 @@ True
 [True,False,False,False,True,False,False,False,True]
 -}
 comp :: Image.Image -> Image.Image
+comp i p = not (i p)
 
 {- | Intersection of two boolean images.
 
@@ -50,6 +53,7 @@ comp :: Image.Image -> Image.Image
 [False,True,False,True,False,True,False,True,False]
 -}
 inter :: Image.Image -> Image.Image -> Image.Image
+inter i1 i2 p = i1 p && i2 p
 
 {- | Union of two boolean images.
 
@@ -60,6 +64,7 @@ inter :: Image.Image -> Image.Image -> Image.Image
 [True,True,True,True,True,True,True,True,True]
 -}
 union :: Image.Image -> Image.Image -> Image.Image
+union i1 i2 p = i1 p || i2 p
 
 {- | Xor of two boolean images.
 
@@ -70,6 +75,7 @@ union :: Image.Image -> Image.Image -> Image.Image
 [True,False,True,False,True,False,True,False,True]
 -}
 xor :: Image.Image -> Image.Image -> Image.Image
+xor i1 i2 p = i1 p /= i2 p
 
 {- | difference of two boolean images.
 
@@ -80,3 +86,4 @@ xor :: Image.Image -> Image.Image -> Image.Image
 [False,False,True,False,False,False,True,False,False]
 -}
 diff :: Image.Image -> Image.Image -> Image.Image
+diff i1 i2 p = i1 p && not (i2 p)

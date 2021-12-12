@@ -3,8 +3,8 @@ module Data.FImage.Geometry
   dist
 , distO
   -- * Converting
---, fromPolar
---, toPolar
+, fromPolar
+, toPolar
 )
 where
 
