@@ -2,4 +2,4 @@
 
 Membres :
 - Cécile YEN
-- Jeremy Thiebaud
+- Jeremy THIEBAUD
